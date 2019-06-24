@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo 
 echo "Metasploit5 Install With Features"
 echo
 
@@ -10,15 +11,13 @@ sudo apt install ruby-dev
 sudo apt-get install postgresql
 
 cd /opt 
-curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \
-  chmod 755 msfinstall && \
-  ./msfinstall
+git clone https://github.com/rapid7/metasploit-framework.git
+
+#curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \
+#  chmod 755 msfinstall && \
+#  ./msfinstall
 
 cd /opt/metasploit-framework
-
-cd /opt/metasploit-framework/
-gem install bundler
-bundle install
 
 git clone https://github.com/rapid7/metasploit-framework.wiki.git
 git clone https://github.com/DynamicDesignz/mad-metasploit.git
@@ -26,3 +25,8 @@ git clone https://github.com/DynamicDesignz/payloads.git
 git clone https://github.com/DynamicDesignz/metasploit-payloads.git
 git clone https://github.com/darkoperator/Metasploit-Plugins.git
 
+cd /opt/metasploit-framework/
+gem install bundler
+bundle install
+
+exit
